@@ -3,6 +3,7 @@ name: trigger_action
 on:
   push:
     branches: ['master']
+  workflow_dispatch:
   repository_dispatch:
     types: [trigger-workflow]
 
