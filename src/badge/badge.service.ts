@@ -31,6 +31,10 @@ export class BadgeService {
     const userData: UserData =
       await this.programmersService.getProgrammersRecordInfo();
 
+    if (!userData) {
+      throw new Error('Programmers user data is empty');
+    }
+
     const svgStr: string = getSvgStr(userData);
     const svgStrMini: string = getMiniSvgStr(userData);
 
